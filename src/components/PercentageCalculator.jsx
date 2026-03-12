@@ -34,6 +34,16 @@ const AnswerDisplay = ({ result, placeholderValue = "0" }) => {
       ? output.value
       : placeholderValue;
 
+  const digitCount = String(value).replace(/[^0-9]/g, "").length;
+  const valueSizeClass =
+    digitCount > 18
+      ? "text-2xl"
+      : digitCount > 14
+      ? "text-3xl"
+      : digitCount > 10
+      ? "text-4xl"
+      : "text-5xl";
+
   const [isBumping, setIsBumping] = useState(false);
   const previousValueRef = useRef(value);
   const bumpTimeoutRef = useRef(null);
@@ -67,8 +77,8 @@ const AnswerDisplay = ({ result, placeholderValue = "0" }) => {
       <p
         className={
           isPlaceholder || hasError
-            ? "mt-2 select-none text-5xl font-semibold tabular-nums text-orange-400/25 transition-transform duration-200 ease-out"
-            : `mt-2 text-5xl font-semibold tabular-nums text-orange-400 transition-transform duration-200 ease-out ${
+            ? `mt-2 w-full select-none whitespace-nowrap overflow-hidden text-clip font-semibold tabular-nums leading-none tracking-tight text-orange-400/25 transition-transform duration-200 ease-out ${valueSizeClass}`
+            : `mt-2 w-full whitespace-nowrap overflow-hidden text-clip font-semibold tabular-nums leading-none tracking-tight text-orange-400 transition-transform duration-200 ease-out ${valueSizeClass} ${
                 isBumping ? "scale-105" : "scale-100"
               }`
         }

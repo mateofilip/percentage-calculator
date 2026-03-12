@@ -92,7 +92,7 @@ const SelectItem = React.forwardRef(
       {...props}
     >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-      <SelectPrimitive.ItemIndicator className="absolute right-2 inline-flex items-center justify-center text-blue-600">
+      <SelectPrimitive.ItemIndicator className="absolute right-2 inline-flex items-center justify-center text-orange-400">
         <svg
           width="15"
           height="15"
