@@ -1,17 +1,35 @@
 @font-face {
-  font-family: TeX;
-  src: url(../public/texgyreheros-regular.otf) format(opentype);
+  font-family: OpenRunde;
+  src: url(../public/OpenRunde-Regular.woff2) format(woff2);
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: TeX;
-  src: url(../public/texgyreheros-bold.otf) format(opentype);
+  font-family: OpenRunde;
+  src: url(../public/OpenRunde-SemiBold.woff2) format(woff2);
   font-weight: bold;
   font-style: normal;
 }
 
 html {
-  font-family: TeX, "Times New Roman", Times, serif;
+  font-family: OpenRunde, "Times New Roman", Times, serif;
+}
+
+.bg-animation {
+  animation: bg-animation 25s linear infinite;
+  background-size: 200% 200%;
+  @apply bg-gradient-to-br from-sky-700 to-amber-600;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

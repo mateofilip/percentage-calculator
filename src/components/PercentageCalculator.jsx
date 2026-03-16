@@ -196,9 +196,9 @@ const CalculatorFrame = ({
             disabled={!canCopy}
             aria-label="Copy result"
             title={canCopy ? "Copy result" : "Nothing to copy yet"}
-            className={`rounded-full py-5 text-white/80 bg-orange-800/20 transition-all hover:bg-orange-800/30 duration-200 ease-out disabled:opacity-40 ${
-              isCopyAnimating ? "scale-105" : "scale-100"
-            }`}
+            className={`rounded-full py-5 text-white/80 bg-orange-800/20 transition-all hover:bg-orange-800/30 duration-200 ease-out disabled:opacity-50 ${
+              canCopy ? "cursor-pointer" : " cursor-not-allowed"
+            } ${isCopyAnimating ? "scale-105" : "scale-100"} `}
             onClick={handleCopy}
           >
             <span className="relative h-4 w-4">
