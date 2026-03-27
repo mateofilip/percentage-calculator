@@ -33,7 +33,7 @@ const socialImageUrl = new URL("/site.png", Astro.site).toString();
 		<meta name="twitter:image" content={socialImageUrl} />
 		<meta name="twitter:image:alt" content="Percento — quick percentage tools" />
 	</head>
-	<body class="h-dvh grid place-items-center p-4 bg-animation">
+	<body class="min-h-dvh grid place-items-center p-4 bg-animation">
 		
 		<main>
 			<PercentageCalculator client:load />
