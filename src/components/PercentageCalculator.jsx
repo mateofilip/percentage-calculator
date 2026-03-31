@@ -27,7 +27,7 @@ const PercentageCalculator = () => {
         </p>
       </div>
 
-      <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 calculator-grid-enter">
         <PercentOfCard />
         <WhatPercentCard />
         <PercentageChangeCard />
