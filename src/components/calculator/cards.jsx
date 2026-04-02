@@ -63,6 +63,7 @@ const PercentOfCard = () => {
       result={result}
       onClear={clear}
       answerPlaceholder="0"
+      className="fade-in-animation"
     >
       <div className="flex w-full flex-wrap items-center justify-start gap-2">
         <span className="text-white/80">What is</span>
@@ -477,7 +478,7 @@ const ValueChangeCard = () => {
 
   const verb = useMemo(
     () => (operator === "increase" ? "increased" : "decreased"),
-    [operator]
+    [operator],
   );
 
   const calculate = () => {

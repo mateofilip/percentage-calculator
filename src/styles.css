@@ -17,9 +17,12 @@ html {
 }
 
 .bg-animation {
+  background-color: #121c3a;
+  background-repeat: no-repeat;
   background-size: 200% 200%;
-  animation: bg-animation 25s ease-in-out infinite;
-  background-image: radial-gradient(
+  animation: bg-animation 15s ease-in-out infinite;
+  background-image:
+    radial-gradient(
       1000px circle at 15% 10%,
       rgba(249, 115, 22, 0.5),
       transparent 55%
@@ -79,5 +82,85 @@ html {
   .bg-animation {
     animation: none;
     background-size: cover;
+  }
+}
+
+.fade-in-animation {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calculator-grid-enter > * {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  filter: blur(10px);
+  animation: calculator-card-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.calculator-grid-enter > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.calculator-grid-enter > *:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+.calculator-grid-enter > *:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.calculator-grid-enter > *:nth-child(4) {
+  animation-delay: 180ms;
+}
+
+.calculator-grid-enter > *:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+.calculator-grid-enter > *:nth-child(6) {
+  animation-delay: 300ms;
+}
+
+@keyframes calculator-card-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    filter: blur(10px);
+  }
+
+  70% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-animation {
+    animation: none;
+  }
+
+  .calculator-grid-enter > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
